@@ -1,0 +1,232 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+
+:root {
+    --primary: #1e3a8a;
+    --primary-dark: #172554;
+    --primary-light: #dbeafe;
+    --background: #f1f5f9;
+    --surface: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --radius: 12px;
+}
+
+* {
+    box-sizing:border-box;
+}
+
+body {
+    font-family: Arial, sans-serif, Helvetica;
+    background-color: var(--background);
+    color: var(--text);
+    margin: 0;
+    line-height: 1.6;
+}
+.navbar {
+    background: var(--primary-dark);
+    color:white;
+    padding:18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav.menu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav.menu a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 16px;
+    transition: .2s;
+}
+
+.nav.menu a:hover,
+.nav.menu a:active {
+    color:white;
+}
+
+
+/* Menu Mobile*/
+
+.menu-toggle {
+    display: none;
+    border: 1px solid #64748b;
+    color: white;
+    background:transparent;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Container */
+.container {
+    width: min(1200px, 100%);
+    margin: 40px auto;
+    min-height: 65vh;
+}
+
+.page-header {
+    margin-bottom: 24px;
+}
+
+.page-header h1{
+    font-size: 28px;
+    margin: 0 0 5px;
+}
+
+.page-header p {
+    color: var(--muted);
+    margin: 0;
+}
+
+/*card*/
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 25px;
+    margin-bottom: 24px;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, .04);
+}
+
+.card-title {
+    font-size: 18px;
+    margin: 0 0 20px;
+}
+
+/* TABLE */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 550px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 15px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: #eff6ff;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* BADGE */
+
+.badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 30px;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* BIODATA */
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 15px;
+}
+
+.profile-grid strong {
+    color: #475569;
+}
+
+/* EMPTY STATE */
+
+.empty {
+    text-align: center;
+    padding: 25px;
+    color: var(--muted);
+}
+
+/* FOOTER */
+
+.footer {
+    background: var(--primary-dark);
+    color: #cbd5e1;
+    text-align: center;
+    padding: 22px;
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 15px;
+        padding: 10px 0;
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .container {
+        margin: 25px auto;
+    }
+
+    .page-header h1 {
+        font-size: 23px;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .profile-grid strong {
+        margin-top: 12px;
+    }
+}
